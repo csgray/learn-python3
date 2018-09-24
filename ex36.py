@@ -1,122 +1,34 @@
 # Corey Gray
 # ex36.py - Designing and Debugging... An Adventure Game!
-# This cries out for objects, but I'm going to use the tools provided: print statements, functions, and branching
+# A really simple text adventure using lists, functions, and modules (No objects!)
 
+def intro():
+    print("""
+You are the prince of the land of Fife, noble and true with a heart of steel - but the evil wizard Zargothrax invaded
+Dundee with his army of undead unicorns. Fireballs and lightning rained from the sky while all the people died and
+buildings collapsed to the floor. The beautiful princess Iona McDougall was taken to prison with cry and waits, frozen,
+to die. You escaped, swearing the mighty oath, "I will make Zargothrax die!"
 
-# Variables
-prompt = "What do you do? "
+As revealed to you in a vision while sleeping in the woods near Glenrothes, you need three artifacts to defeat the
+sorcerer: A golden dragon, a strange glowing amulet, and a huge enchanted hammer of war. And so begins the
+                                       _______           _______  _______ _________
+                                      (  ___  )|\     /|(  ____ \(  ____ \\__   __/
+                                      | (   ) || )   ( || (    \/| (    \/   ) (   
+                                      | |   | || |   | || (__    | (_____    | |   
+                                      | |   | || |   | ||  __)   (_____  )   | |   
+                                      | | /\| || |   | || (            ) |   | |   
+                                      | (_\ \ || (___) || (____/\/\____) |   | |   
+                                      (____\/_)(_______)(_______/\_______)   )_(   
 
-# Rooms
-def gate():
-    print("\nThis is a gate!")
-    choice = input(prompt)
-    if "north" in choice:
-        courtyard()
-    else:
-        print("That doesn't work.")
-        gate()
+                                                        FOR  THE
+          _______  _______  _______  _______  _______    _______  _______    _______  _        _______  _______          
+|\     /|(  ___  )(       )(       )(  ____ \(  ____ )  (  ___  )(  ____ \  (  ____ \( \      (  ___  )(  ____ )|\     /|
+| )   ( || (   ) || () () || () () || (    \/| (    )|  | (   ) || (    \/  | (    \/| (      | (   ) || (    )|( \   / )
+| (___) || (___) || || || || || || || (__    | (____)|  | |   | || (__      | |      | |      | |   | || (____)| \ (_) / 
+|  ___  ||  ___  || |(_)| || |(_)| ||  __)   |     __)  | |   | ||  __)     | | ____ | |      | |   | ||     __)  \   /  
+| (   ) || (   ) || |   | || |   | || (      | (\ (     | |   | || (        | | \_  )| |      | |   | || (\ (      ) (   
+| )   ( || )   ( || )   ( || )   ( || (____/\| ) \ \__  | (___) || )        | (___) || (____/\| (___) || ) \ \__   | |   
+|/     \||/     \||/     \||/     \|(_______/|/   \__/  (_______)|/         (_______)(_______/(_______)|/   \__/   \_/  
+""")
 
-def courtyard():
-    print("This is a courtyard!")
-    choice = input(prompt)
-    if "north" in choice:
-        hall()
-    elif "south" in choice:
-        gate()
-    else:
-        print("That doesn't work.")
-        courtyard()
-
-def hall():
-    print("This is the main hall!")
-    choice = input(prompt)
-    if "up" in choice or "stair" in choice:
-        throne()
-    elif "west" in choice:
-        west_tower()
-    elif "east" in choice:
-        east_tower()
-    elif "down" in choice:
-        dungeon()
-    elif "south" in choice:
-        courtyard()
-    else:
-        print("That doesn't work.")
-        hall()
-
-def throne():
-    print("This is the throne room!")
-    choice = input(prompt)
-    if "down" in choice or "stair" in choice:
-        hall()
-    else:
-        print("That doesn't work.")
-        throne()
-
-def west_tower():
-    print("This is the western tower!")
-    choice = input(prompt)
-    if "up" in choice or "stair" in choice:
-        princess()
-    elif "east" in choice:
-        hall()
-    else:
-        print("That doesn't work.")
-        west_tower()
-
-def princess():
-    print("This is the princess's room!")
-    choice = input(prompt)
-    if "down" in choice or "stair" in choice:
-        west_tower()
-    else:
-        print("That doesn't work.")
-        princess()
-
-def east_tower():
-    print("This is the eastern tower!")
-    choice = input(prompt)
-    if "up" in choice or "stair" in choice:
-        wizard()
-    elif "west" in choice:
-        hall()
-    else:
-        print("That doesn't work.")
-        east_tower()
-
-def wizard():
-    print("This is the wizard's room!")
-    choice = input(prompt)
-    if "down" in choice or "stair" in choice:
-        east_tower()
-    else:
-        print("That doesn't work.")
-        wizard()
-
-def dungeon():
-    print("This is the dungeon!")
-    choice = input(prompt)
-    if "up" in choice:
-        hall()
-    if "south" in choice:
-        dragon()
-    else:
-        print("That doesn't work.")
-        dungeon()
-
-def dragon():
-    print("This is the dragon's lair!")
-    choice = input(prompt)
-    if "north" in choice:
-        dungeon()
-    else:
-        print("That doesn't work.")
-        dragon()
-
-def start():
-    print("One thousand years ago, this ancient citadel fell to an evil wizard. His evil infected the land causing crops to fail, the dead to rise, and the peasants to flee. Many heroes have challenged the wizard and failed. Can you succeed?")
-    gate()
-
-
-# Game
-start()
+intro()
