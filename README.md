@@ -15,3 +15,7 @@ As such, there's not much new in here. It's a collection of exercises designed f
 ### Exercise 36: Designing and Debugging
 
 This is supposed to be a little text-based adventure game using lists, functions, and modules. Mine is maybe a shell, and I really want to go back through it and make it awesome. Though I kind of want to use objects. At the very least, it might be good practice for string interpretation?
+
+### Exercise 43: Basic Object-Oriented Analysis and Design
+
+This is just the shell code. It is another text-based adventure game, but it uses objects like I originally wanted to do. I'm not a fan of the whole 'Gothon' thing, so I want to redo this game as an updated version of exercise 36.
