@@ -16,7 +16,7 @@ def game():
 
 def die():
     print("""You die.""")
-    choice = input("Try again? ")
+    choice = input("To be the chosen one, a hero must rise to the test. Will you try again? ")
     if choice in ["yes", "y"]:
         game()
     else:
@@ -48,7 +48,7 @@ annoying, but you find it easier to move. Plus, you can actually draw your sword
         
         elif ("go" in choice or "climb" in choice) and "trail" in choice:
             print("\nYou start climbing the trail higher up the mountain.")
-            trail()
+            trail1()
 
         elif choice == "quit":
             ex36scenes.quit()
@@ -56,13 +56,13 @@ annoying, but you find it easier to move. Plus, you can actually draw your sword
         else:
             print("What was that? Try something else.")
 
-def trail():
-    ex36scenes.trail()
+def trail1():
+    ex36scenes.trail1()
     while True:
         choice = input("What do you do? ")
 
         if choice == "look":
-            ex36scenes.trail()
+            ex36scenes.trail1()
         
         elif choice in ["run", "flee", "retreat", "withdraw"]:
             print("\nYou turn tail and run back down the trail!")
@@ -81,8 +81,28 @@ with the hilt, the goblins swarm over you and stab you repeatedly in the face.
                 die()
             else:
                 print("""
-You slaughter those goblins. You slaughter them good.
+You draw your sword from its weatherworn sheath and an epic battle is fight! The creatures are as weak as they are evil
+and they swing their oversized blades in wide, slow arcs, but for every goblin that you cut down it seems two more
+spring from some hole in the snow to join the fray. Soon their black blood covers the snow, which has been churned into
+a thick slush beneath your boots, and the sound of steel on steel echos through the mountains.
+
+The battle ends with the last goblin's head rolling off of its shoulders and falling at your feet.
                 """)
+                trail2()
+
+        elif choice == "quit":
+            ex36scenes.quit()
+
+        else:
+            print("What was that? Try something else.")
+
+def trail2():
+    ex36scenes.trail2()
+    while True:
+        choice = input("What do you do? ")
+
+        if choice == "look":
+            ex36scenes.trail2()
 
         elif choice == "quit":
             ex36scenes.quit()

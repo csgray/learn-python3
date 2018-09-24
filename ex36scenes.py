@@ -45,14 +45,22 @@ horse in a sheltered alcove. There's a small pile of dry wood, good for a fire, 
 A narrow, winding trail is barely visible through the falling snow.
     """)
 
-def trail():
+def trail1():
     print(r"""
 The trail winds through a narrow passage between two ice-covered boulders then through a thick copse of birch trees.
 It's dark here, the trees blocking much of the light, and quiet. Too quiet. The only sound you can hear is the sound of
 your own boots crunching in the deep snow.
 
 Suddenly, you hear high-pitched shouting and a gang of goblins burst out of the snow, throwing back the stand that they
-were hiding under with a spray of snow. They draw their sharp, curved knives and rush towards you!
+were hiding under with a spray of snow. They draw their impractical swords and rush towards you!
+    """)
+
+def trail2():
+    print(r"""
+Numerous goblin corpses and pieces of corpses litter this clearing in the birch forest along with a motley collection of
+impractical swords. A thick, almost syrupy slush comprised of snow and goblin blood squishes under your heavy boots.
+Several holes at the bases of nearby trees reveal where the goblins were lying in ambush, and the trail leading higher
+up the mountain continues at the far end of the clearing.   
     """)
 
 def quit():
