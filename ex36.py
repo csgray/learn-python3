@@ -2,33 +2,30 @@
 # ex36.py - Designing and Debugging... An Adventure Game!
 # A really simple text adventure using lists, functions, and modules (No objects!)
 
-def intro():
-    print("""
-You are the prince of the land of Fife, noble and true with a heart of steel - but the evil wizard Zargothrax invaded
-Dundee with his army of undead unicorns. Fireballs and lightning rained from the sky while all the people died and
-buildings collapsed to the floor. The beautiful princess Iona McDougall was taken to prison with cry and waits, frozen,
-to die. You escaped, swearing the mighty oath, "I will make Zargothrax die!"
+import ex36scenes # for scene descriptions
 
-As revealed to you in a vision while sleeping in the woods near Glenrothes, you need three artifacts to defeat the
-sorcerer: A golden dragon, a strange glowing amulet, and a huge enchanted hammer of war. And so begins the
-                                       _______           _______  _______ _________
-                                      (  ___  )|\     /|(  ____ \(  ____ \\__   __/
-                                      | (   ) || )   ( || (    \/| (    \/   ) (   
-                                      | |   | || |   | || (__    | (_____    | |   
-                                      | |   | || |   | ||  __)   (_____  )   | |   
-                                      | | /\| || |   | || (            ) |   | |   
-                                      | (_\ \ || (___) || (____/\/\____) |   | |   
-                                      (____\/_)(_______)(_______/\_______)   )_(   
+weapons_and_armor = "covered in ice!"
 
-                                                        FOR  THE
-          _______  _______  _______  _______  _______    _______  _______    _______  _        _______  _______          
-|\     /|(  ___  )(       )(       )(  ____ \(  ____ )  (  ___  )(  ____ \  (  ____ \( \      (  ___  )(  ____ )|\     /|
-| )   ( || (   ) || () () || () () || (    \/| (    )|  | (   ) || (    \/  | (    \/| (      | (   ) || (    )|( \   / )
-| (___) || (___) || || || || || || || (__    | (____)|  | |   | || (__      | |      | |      | |   | || (____)| \ (_) / 
-|  ___  ||  ___  || |(_)| || |(_)| ||  __)   |     __)  | |   | ||  __)     | | ____ | |      | |   | ||     __)  \   /  
-| (   ) || (   ) || |   | || |   | || (      | (\ (     | |   | || (        | | \_  )| |      | |   | || (\ (      ) (   
-| )   ( || )   ( || )   ( || )   ( || (____/\| ) \ \__  | (___) || )        | (___) || (____/\| (___) || ) \ \__   | |   
-|/     \||/     \||/     \||/     \|(_______/|/   \__/  (_______)|/         (_______)(_______/(_______)|/   \__/   \_/  
-""")
+ex36scenes.intro()
+input("Press any key to continue...")
 
-intro()
+ex36scenes.base()
+while True:
+    choice = input("What do you do? ")
+
+    if choice == "look":
+        ex36scenes.base()
+
+    elif choice == "light a fire":
+        print("""
+You light a fire in the sheltered alcove. Not only does your horse seem to appreciate it, but your weapons and armor
+thaw out. Water slowly runs down the hard metal surfaces to coalesce in a pool around your feet, which is kind of
+annoying, but you find it easier to move. Plus, you can actually draw your sword!
+        """)
+        weapons_and_armor = "thawed!"
+    
+    elif choice == "quit":
+        ex36scenes.quit()
+
+    else:
+        print("What was that? Try something else.")
