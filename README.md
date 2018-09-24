@@ -14,7 +14,7 @@ As such, there's not much new in here. It's a collection of exercises designed f
 
 ### Exercise 36: Designing and Debugging
 
-This is supposed to be a little text-based adventure game using lists, functions, and modules. Mine is maybe a shell, and I really want to go back through it and make it awesome. Though I kind of want to use objects. At the very least, it might be good practice for string interpretation?
+This is supposed to be a little text-based adventure game using lists, functions, and modules. No longer a lame little shell, my game is slowly coming together. It needs more work until is worthy of its title!
 
 ### Exercise 43: Basic Object-Oriented Analysis and Design
 

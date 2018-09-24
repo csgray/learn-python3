@@ -45,6 +45,16 @@ horse in a sheltered alcove. There's a small pile of dry wood, good for a fire, 
 A narrow, winding trail is barely visible through the falling snow.
     """)
 
+def trail():
+    print(r"""
+The trail winds through a narrow passage between two ice-covered boulders then through a thick copse of birch trees.
+It's dark here, the trees blocking much of the light, and quiet. Too quiet. The only sound you can hear is the sound of
+your own boots crunching in the deep snow.
+
+Suddenly, you hear high-pitched shouting and a gang of goblins burst out of the snow, throwing back the stand that they
+were hiding under with a spray of snow. They draw their sharp, curved knives and rush towards you!
+    """)
+
 def quit():
     print(r"""
 You quit the quest. Dundee remains a ruin, the princess Iona McDougall remains frozen, and Zargothrax reigns forever
