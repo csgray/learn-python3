@@ -154,29 +154,52 @@ def cliff1():
         
         elif "look" in choice and "troll" in choice:
             print("""
-This is a butt-ugly troll.
-            """)
+You've faced many trolls on your journey here, but this troll is larger than them all. It's thick hide is covered with
+scars and strong muscles ripple beneath. It wields a tree trunk like a club and lounges near the rocks at the base of
+the cliff while waiting for its next meal.""")
 
         elif "look" in choice and "rocks" in choice:
             print("""
-Here are some rocks.
-            """)
+Rocks and boulders of various size lie around the base of the cliff, likely having fallen from the heights. They look
+like they could be climbed to give you a higher vantage point.""")
 
         elif choice in ["attack", "kill", "fight"] and on_rocks == False: 
+            print("""
+You charge towards the troll with your sword drawn and gleaming in the light! The beast swings its club at you, which
+you deftly dodge to stab at it's flanks, but your blade fails to pierce its thick hide. The troll catches you with the
+backswing, knocking you into the rocks, and you see it lift its club before it crushes your skull and you slip into
+oblivion.""") 
             die()
         
         elif choice in ["attack", "kill", "fight"] and on_rocks == True: 
             print("""
-Troll is dead.             
-            """)
+With a mighty battle cry, you leap off of the rocks and onto the neck of the troll!  It had no idea that you were there,
+waiting for the perfect moment to strike, and bellows in surprise as you land on its shoulders with your arms wrapped
+around its neck. You dodge from shoulder to shoulder as it tries to grab you and stab at its neck, your sword slipping
+off its thick hide, before you go for the really soft bits: Its eyes.
+
+Sharp steel ruptures the gelatinous orb and now the troll screams in not rage but pain as it is half blinded. Another
+blow finishes the job and it flails wildly, bashing into the rocks it can't see with its ruined eyes, while you
+repeatedly drive your sword into face. Finally, the massive beast collapses, falling forward and landing in a puddle of
+its own blood, leaving you standing victorious.""")
 
         elif ("climb" in choice or "go" in choice) and "cliff" in choice:
+            print("""
+You try to run past the troll to scale the cliff, but it catches you by the leg. It lifts you into the air, ignoring
+your wild swings with your sword, and grabs you by both legs to tear you in half.""")
             die()
 
         elif ("climb" in choice or "go" in choice) and "rocks" in choice:
             print("""
-You scramble on top of the rocks.""")
+You manage to approach the rocks without being noticed by the troll. You scramble up the rough, icy surface to take a
+position where you can look down on the troll.""")
             on_rocks = True
+
+        elif choice in ["run", "flee", "retreat", "withdraw"]:
+            print("\nYou turn tail and run back down the trail!")
+            global coward
+            coward = True
+            trail2()
 
         elif choice == "quit":
             ex36scenes.quit()
