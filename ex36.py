@@ -4,17 +4,20 @@
 
 import ex36scenes # for scene descriptions
 
+
 # Game Variables
 weapons_and_armor = "covered in ice!"
 coward = False
 grappling_hook = False
 on_rocks = False
 
+
 # Game Engine Functions
 def game(): 
     ex36scenes.intro()
     input("Press any key to continue...")
     base()
+
 
 def die():
     print("You die. And with you dies all hope of restoring cosmic balance to the lands of Fife.")
@@ -35,6 +38,7 @@ def die():
 
     else:
         exit()
+
 
 # Scenes
 def base():
@@ -69,6 +73,7 @@ annoying, but you find it easier to move. Plus, you can actually draw your sword
 
         else:
             print("What was that? Try something else.")
+
 
 def trail1():
     ex36scenes.trail1()
@@ -110,6 +115,7 @@ The battle ends with the last goblin's head rolling off of its shoulders and fal
         else:
             print("What was that? Try something else.")
 
+
 def trail2():
     ex36scenes.trail2()
     while True:
@@ -142,6 +148,7 @@ with worthless trash, but in one of them you find an adventurer's pack containin
 
         else:
             print("What was that? Try something else.")
+
 
 def cliff1():
     ex36scenes.cliff1()
@@ -182,6 +189,7 @@ Sharp steel ruptures the gelatinous orb and now the troll screams in not rage bu
 blow finishes the job and it flails wildly, bashing into the rocks it can't see with its ruined eyes, while you
 repeatedly drive your sword into face. Finally, the massive beast collapses, falling forward and landing in a puddle of
 its own blood, leaving you standing victorious.""")
+            ex36scenes.cliff2()
 
         elif ("climb" in choice or "go" in choice) and "cliff" in choice:
             print("""
@@ -206,6 +214,53 @@ position where you can look down on the troll.""")
 
         else:
             print("What was that? Try something else.")
+
+
+def cliff2():
+    ex36scenes.cliff2()
+    while True:
+        global on_rocks
+        choice = input("What do you do? ")
+        
+        if choice == "look":
+            ex36scenes.cliff2()
+
+        if "look" in choice and "remains" in choice:
+            print("""
+The bones of who knows how man would-be heroes are piled at the base of the cliff and scattered about the area. Some
+clearly fell to the precipitous climb and others to the troll, but the end result is the same. Dozens of warriors lie
+in ruins around you and their gear has long been lost to the elements.
+            """)
+
+        if choice == "climb" and grappling_hook == False:
+            print("""
+You walk to the base of the cliff and look up: Your goal is high above you and there don't seem to be many handholds,
+but you're not about to let that stop you. You start to scale the sheer cliff, finding a few places to jam your fingers
+and the toes of your boots, but halfway up you find an impass: There's nothing but blank rock between you and the next
+handhold several feet above you.
+
+You summon all your strength and launch yourself up the cliff face - only to fall short. Then you fall down the rest of
+the cliff and break your neck.""")
+            die()
+
+        if choice == "climb" and grappling_hook == True:
+            print("""
+You walk to the base of the cliff and look up: Your goal is high above you and there don't seem to be many handholds,
+but you came prepated. You take out the grappling hook that you found earlier and spin it, building up momentum, then
+launch it towards the cave mouth high overhead. There's the scraping of metal on rock before it catches somehere high
+overhead. A few sharp tugs tells you that it is well anchored and you start your ascent.""")
+            cave()
+
+        elif choice == "quit":
+            ex36scenes.quit()
+
+        else:
+            print("What was that? Try something else.")
+
+
+def cave():
+    pass
+
 
 # Game Loop
 game()

@@ -72,7 +72,8 @@ against the rocks near the cliff. Fortunately, it hasn't seen you yet.
 
 def cliff2():
     print(r"""
-There is a dead troll here.
+A massive troll lies face down in a puddle of its own blood, and the way to the base of the cliff is clear. Set high
+into the mountain overhead is a cave, and the remains of numerous would-be heroes lies at the base of the cliff.
     """)
 
 def quit():
