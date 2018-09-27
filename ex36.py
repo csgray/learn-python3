@@ -7,6 +7,7 @@ import ex36scenes # for scene descriptions
 # Game Variables
 weapons_and_armor = "covered in ice!"
 coward = False
+grappling_hook = False
 
 # Game Engine Functions
 def game(): 
@@ -15,7 +16,7 @@ def game():
     base()
 
 def die():
-    print("""You die.""")
+    print("You die. And with you dies all hope of restoring cosmic balance to the lands of Fife.")
     choice = input("To be the chosen one, a hero must rise to the test. Will you try again? ")
     if choice in ["yes", "y"]:
         game()
@@ -101,6 +102,39 @@ def trail2():
     while True:
         choice = input("What do you do? ")
 
+        if choice == "look":
+            ex36scenes.trail2()
+
+        elif ("look" in choice or "search" in choice) and ("goblins" in choice or "corpse" in choice):
+            print("""
+Gross. The only thing that smells worse than a goblin's outsides is a goblin's insides, and thanks to your handy skill
+at epic fights, there's a bunch of goblin insides now outside and steaming. You pick over the battlefield with a
+practiced eye but don't find anything worth taking.""")
+
+        elif ("look" in choice or "search" in choice) and "holes" in choice:
+            print("""
+There are multiple holes at the base of the trees surrounding the clearing which lead to a maze of tunnels which are
+too short to move through. That and they smell like something died. Many somethings died. Most of the holes are filled
+with worthless trash, but in one of them you find an adventurer's pack containing a grappling hook.
+            """)
+            global grappling_hook
+            grappling_hook = True
+
+        elif ("go" in choice or "climb" in choice) and "trail" in choice:
+            print("\nYou continue up the trail higher into the mountains.")
+            cliff()
+
+        elif choice == "quit":
+            ex36scenes.quit()
+
+        else:
+            print("What was that? Try something else.")
+
+def cliff():
+    ex36scenes.cliff()
+    while True:
+        choice = input("What do you do? ")
+        
         if choice == "look":
             ex36scenes.trail2()
 

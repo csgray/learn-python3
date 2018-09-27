@@ -63,6 +63,11 @@ Several holes at the bases of nearby trees reveal where the goblins were lying i
 up the mountain continues at the far end of the clearing.   
     """)
 
+def cliff():
+    print(r"""
+There is a cliff here.
+    """)
+
 def quit():
     print(r"""
 You quit the quest. Dundee remains a ruin, the princess Iona McDougall remains frozen, and Zargothrax reigns forever
