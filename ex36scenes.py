@@ -63,9 +63,16 @@ Several holes at the bases of nearby trees reveal where the goblins were lying i
 up the mountain continues at the far end of the clearing.   
     """)
 
-def cliff():
+def cliff1():
     print(r"""
-There is a cliff here.
+The trail ends at the base of a sheer cliff below a cave set into the mountainside. Bones and broken weapons and armor
+litter the ground - and the reason is soon apparent: A massive troll, larger than any that you have seen before, lounges
+against the rocks near the cliff. Fortunately, it hasn't seen you yet.
+    """)
+
+def cliff2():
+    print(r"""
+There is a dead troll here.
     """)
 
 def quit():

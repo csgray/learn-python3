@@ -8,6 +8,7 @@ import ex36scenes # for scene descriptions
 weapons_and_armor = "covered in ice!"
 coward = False
 grappling_hook = False
+on_rocks = False
 
 # Game Engine Functions
 def game(): 
@@ -19,7 +20,19 @@ def die():
     print("You die. And with you dies all hope of restoring cosmic balance to the lands of Fife.")
     choice = input("To be the chosen one, a hero must rise to the test. Will you try again? ")
     if choice in ["yes", "y"]:
+        # Reset Game Variables
+        global weapons_and_armor
+        weapons_and_armor = "covered in ice!"
+        global coward
+        coward = False
+        global grappling_hook
+        grappling_hook = False
+        global on_rocks
+        on_rocks = False
+
+        # Restart game
         game()
+
     else:
         exit()
 
@@ -122,7 +135,7 @@ with worthless trash, but in one of them you find an adventurer's pack containin
 
         elif ("go" in choice or "climb" in choice) and "trail" in choice:
             print("\nYou continue up the trail higher into the mountains.")
-            cliff()
+            cliff1()
 
         elif choice == "quit":
             ex36scenes.quit()
@@ -130,13 +143,40 @@ with worthless trash, but in one of them you find an adventurer's pack containin
         else:
             print("What was that? Try something else.")
 
-def cliff():
-    ex36scenes.cliff()
+def cliff1():
+    ex36scenes.cliff1()
     while True:
+        global on_rocks
         choice = input("What do you do? ")
         
         if choice == "look":
-            ex36scenes.trail2()
+            ex36scenes.cliff1()
+        
+        elif "look" in choice and "troll" in choice:
+            print("""
+This is a butt-ugly troll.
+            """)
+
+        elif "look" in choice and "rocks" in choice:
+            print("""
+Here are some rocks.
+            """)
+
+        elif choice in ["attack", "kill", "fight"] and on_rocks == False: 
+            die()
+        
+        elif choice in ["attack", "kill", "fight"] and on_rocks == True: 
+            print("""
+Troll is dead.             
+            """)
+
+        elif ("climb" in choice or "go" in choice) and "cliff" in choice:
+            die()
+
+        elif ("climb" in choice or "go" in choice) and "rocks" in choice:
+            print("""
+You scramble on top of the rocks.""")
+            on_rocks = True
 
         elif choice == "quit":
             ex36scenes.quit()
