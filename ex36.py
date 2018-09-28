@@ -20,7 +20,7 @@ def game():
 
 
 def die():
-    print("You die. And with you dies all hope of restoring cosmic balance to the lands of Fife.")
+    print("You die. And with you dies all hope of restoring cosmic balance to the lands of Dundee.")
     choice = input("To be the chosen one, a hero must rise to the test. Will you try again? ")
     if choice in ["yes", "y"]:
         # Reset Game Variables
@@ -105,8 +105,7 @@ and they swing their oversized blades in wide, slow arcs, but for every goblin t
 spring from some hole in the snow to join the fray. Soon their black blood covers the snow, which has been churned into
 a thick slush beneath your boots, and the sound of steel on steel echos through the mountains.
 
-The battle ends with the last goblin's head rolling off of its shoulders and falling at your feet.
-                """)
+The battle ends with the last goblin's head rolling off of its shoulders and falling at your feet.""")
                 trail2()
 
         elif choice == "quit":
@@ -191,9 +190,9 @@ off its thick hide, before you go for the really soft bits: Its eyes.
 
 Sharp steel ruptures the gelatinous orb and now the troll screams in not rage but pain as it is half blinded. Another
 blow finishes the job and it flails wildly, bashing into the rocks it can't see with its ruined eyes, while you
-repeatedly drive your sword into face. Finally, the massive beast collapses, falling forward and landing in a puddle of
-its own blood, leaving you standing victorious.
-            """)
+repeatedly drive your sword into face. Finally, in desperation, the troll swings its club at you and crushes its own
+skull. The massive beast collapses, falling forward and landing in a puddle of its own blood, leaving you standing
+victorious.""")
             cliff2()
 
         elif ("climb" in choice or "go" in choice) and "cliff" in choice:
@@ -232,14 +231,14 @@ def cliff2():
         if choice == "look":
             ex36scenes.cliff2()
 
-        if "look" in choice and "remains" in choice:
+        elif "look" in choice and "remains" in choice:
             print("""
 The bones of who knows how man would-be heroes are piled at the base of the cliff and scattered about the area. Some
 clearly fell to the precipitous climb and others to the troll, but the end result is the same. Dozens of warriors lie
 in ruins around you and their gear has long been lost to the elements.
             """)
 
-        if "climb" in choice and not grappling_hook:
+        elif "climb" in choice and not grappling_hook:
             print("""
 You walk to the base of the cliff and look up: Your goal is high above you and there don't seem to be many handholds,
 but you're not about to let that stop you. You start to scale the sheer cliff, finding a few places to jam your fingers
@@ -251,13 +250,12 @@ the cliff and break your neck.
             """)
             die()
 
-        if "climb" in choice and grappling_hook:
+        elif "climb" in choice and grappling_hook:
             print("""
 You walk to the base of the cliff and look up: Your goal is high above you and there don't seem to be many handholds,
 but you came prepated. You take out the grappling hook that you found earlier and spin it, building up momentum, then
 launch it towards the cave mouth high overhead. There's the scraping of metal on rock before it catches somehere high
-overhead. A few sharp tugs tells you that it is well anchored and you start your ascent.
-            """)
+overhead. A few sharp tugs tells you that it is well anchored and you start your ascent.""")
             cave()
 
         elif choice == "quit":
@@ -276,31 +274,60 @@ def cave():
         if choice == "look":
             ex36scenes.cave()
         
-        if "look" in choice and ("shrine" in choice or "altar" in choice):
+        elif "look" in choice and ("shrine" in choice or "altar" in choice):
             print("""
 Carved from the stone of the cave itself and permanently fixed to the floor, this altar sits on a raised dais at the
 back of the cave with curved ramps that hug the walls leading up to it. The sides depict images of epic battles where
 heroes of centuries of old face demonic enemies. The top is bare save for the huge hammer on top of it.
             """)
         
-        if "look" in choice and ("warriors" in choice or "statues" in choice):
+        elif "look" in choice and ("warriors" in choice or "statues" in choice):
             print("""
 Two grim warriors stand eternal guard over the altar. Every detail is reflected in their weapons and armor, and their
 helmeted gaze is fixed on the hammer atop the altar. A dim blue glow is barely perceptible from within the helms.
             """)
         
-        if "look" in choice and "hammer" in choice:
+        elif "look" in choice and "hammer" in choice:
             print("""
 This massive hammer rests atop the altar waiting for a warrior with a heart pure of steel. An ancient weapon, the head
-is a block of carved stone reinforced with metal and bearing runes. The shaft is almost as long as a man is tall. The
-very air surrounding the hammer thrums with a barely contained power from thousands of years ago.        
+is a block of carved stone reinforced with metal and bearing runes. The haft is almost as long as a man is tall. The
+very air surrounding the hammer thrums with a barely contained power from thousands of years ago.
+
+This can only be the HAMMER OF GLORY!
             """)
 
-        if "get" in choice and "hammer" in choice and coward:
-            pass
+        elif "get" in choice and "hammer" in choice and coward:
+            print("""
+The air feels heavy, thick even, as you approach the altar and you can't shake the feeling that something is watching
+you. Judging you. Your heart is pounding in your ears as you reach for the HAMMER OF GLORY.
+
+Time seems to stop when you touch the worn haft. "DEFILER!" booms a pair of thunderous voices. The sound seems to
+emanage from within your head and the very walls of the cave all at once. "COWARD! ONLY A HERO WITH A HEART PURE OF
+STEEL MAY CLAIM THE HAMMER OF GLORY!"
+
+You try to remove your hand but can't as the flames in the sconces roar towards the ceiling and the eyes within the
+helms of the stone warriors burn. The agony you feel is brief but intense as the ancient power of the HAMMER OF GLORY
+turns against you and blasts you apart down to your atoms.
+            """)
+            die()
         
-        if "get" in choice and "hammer" in choice and not coward:
-            pass
+        elif "get" in choice and "hammer" in choice and not coward:
+            print("""
+The air feels heavy, thick even, as you approach the altar and you can't shake the feeling that something is watching
+you. Judging you. Your heart is pounding in your ears as you reach for the HAMMER OF GLORY.
+
+Time seems to stop when you touch the worn haft. The HAMMER OF GLORY seems to push against your hand and your mind, and
+now you can feel the gaze of the stone warriors boring down into your soul. After what feels like an eternity of
+scrutiny but is really only a few seconds, the presence relents and your fingers tighten around the haft.
+
+The HAMMER OF GLORY is deceptively light in your hands, but you know that should you swing it it will come down with all
+the force and wrath of the gods. This is the only weapon that can stand against Zargothrax and his army of undead
+unicorns.
+
+You raise it up to the heavens above, and you hail the king!
+            """)
+            input("Press any key to continue...")
+            ex36scenes.victory()
 
         elif choice == "quit":
             ex36scenes.quit()

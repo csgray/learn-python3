@@ -90,3 +90,13 @@ You quit the quest. Dundee remains a ruin, the princess Iona McDougall remains f
 as the new dark master of Fife.
     """)
     exit()
+
+def victory():
+    print(r"""
+Armed with the HAMMER OF GLORY, you descend from the mountain to continue your quest. No power imaginable can stand
+against the HAMMER OF GLORY's epic might, but you need two more artifacts if you are to free the princess Iona
+McDougall and restore cosmic balance to the lands of Dundee: A magic, golden dragon and the AMULET OF JUSTICE.
+
+None may doubt your worth. You are truly the ultimate fighter and a hero with a heart pure of steel!
+    """)
+    exit()
