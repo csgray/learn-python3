@@ -128,7 +128,8 @@ def trail2():
             print("""
 Gross. The only thing that smells worse than a goblin's outsides is a goblin's insides, and thanks to your handy skill
 at epic fights, there's a bunch of goblin insides now outside and steaming. You pick over the battlefield with a
-practiced eye but don't find anything worth taking.""")
+practiced eye but don't find anything worth taking.
+            """)
 
         elif ("look" in choice or "search" in choice) and "holes" in choice:
             print("""
@@ -163,22 +164,25 @@ def cliff1():
             print("""
 You've faced many trolls on your journey here, but this troll is larger than them all. It's thick hide is covered with
 scars and strong muscles ripple beneath. It wields a tree trunk like a club and lounges near the rocks at the base of
-the cliff while waiting for its next meal.""")
+the cliff while waiting for its next meal.
+            """)
 
         elif "look" in choice and "rocks" in choice:
             print("""
 Rocks and boulders of various size lie around the base of the cliff, likely having fallen from the heights. They look
-like they could be climbed to give you a higher vantage point.""")
+like they could be climbed to give you a higher vantage point.
+            """)
 
-        elif choice in ["attack", "kill", "fight"] and on_rocks == False: 
+        elif choice in ["attack", "kill", "fight"] and not on_rocks: 
             print("""
 You charge towards the troll with your sword drawn and gleaming in the light! The beast swings its club at you, which
 you deftly dodge to stab at it's flanks, but your blade fails to pierce its thick hide. The troll catches you with the
 backswing, knocking you into the rocks, and you see it lift its club before it crushes your skull and you slip into
-oblivion.""") 
+oblivion.
+            """) 
             die()
         
-        elif choice in ["attack", "kill", "fight"] and on_rocks == True: 
+        elif choice in ["attack", "kill", "fight"] and on_rocks: 
             print("""
 With a mighty battle cry, you leap off of the rocks and onto the neck of the troll!  It had no idea that you were there,
 waiting for the perfect moment to strike, and bellows in surprise as you land on its shoulders with your arms wrapped
@@ -188,19 +192,22 @@ off its thick hide, before you go for the really soft bits: Its eyes.
 Sharp steel ruptures the gelatinous orb and now the troll screams in not rage but pain as it is half blinded. Another
 blow finishes the job and it flails wildly, bashing into the rocks it can't see with its ruined eyes, while you
 repeatedly drive your sword into face. Finally, the massive beast collapses, falling forward and landing in a puddle of
-its own blood, leaving you standing victorious.""")
-            ex36scenes.cliff2()
+its own blood, leaving you standing victorious.
+            """)
+            cliff2()
 
         elif ("climb" in choice or "go" in choice) and "cliff" in choice:
             print("""
 You try to run past the troll to scale the cliff, but it catches you by the leg. It lifts you into the air, ignoring
-your wild swings with your sword, and grabs you by both legs to tear you in half.""")
+your wild swings with your sword, and grabs you by both legs to tear you in half.
+            """)
             die()
 
         elif ("climb" in choice or "go" in choice) and "rocks" in choice:
             print("""
 You manage to approach the rocks without being noticed by the troll. You scramble up the rough, icy surface to take a
-position where you can look down on the troll.""")
+position where you can look down on the troll.
+            """)
             on_rocks = True
 
         elif choice in ["run", "flee", "retreat", "withdraw"]:
@@ -232,7 +239,7 @@ clearly fell to the precipitous climb and others to the troll, but the end resul
 in ruins around you and their gear has long been lost to the elements.
             """)
 
-        if choice == "climb" and grappling_hook == False:
+        if "climb" in choice and not grappling_hook:
             print("""
 You walk to the base of the cliff and look up: Your goal is high above you and there don't seem to be many handholds,
 but you're not about to let that stop you. You start to scale the sheer cliff, finding a few places to jam your fingers
@@ -240,15 +247,17 @@ and the toes of your boots, but halfway up you find an impass: There's nothing b
 handhold several feet above you.
 
 You summon all your strength and launch yourself up the cliff face - only to fall short. Then you fall down the rest of
-the cliff and break your neck.""")
+the cliff and break your neck.
+            """)
             die()
 
-        if choice == "climb" and grappling_hook == True:
+        if "climb" in choice and grappling_hook:
             print("""
 You walk to the base of the cliff and look up: Your goal is high above you and there don't seem to be many handholds,
 but you came prepated. You take out the grappling hook that you found earlier and spin it, building up momentum, then
 launch it towards the cave mouth high overhead. There's the scraping of metal on rock before it catches somehere high
-overhead. A few sharp tugs tells you that it is well anchored and you start your ascent.""")
+overhead. A few sharp tugs tells you that it is well anchored and you start your ascent.
+            """)
             cave()
 
         elif choice == "quit":
@@ -259,7 +268,19 @@ overhead. A few sharp tugs tells you that it is well anchored and you start your
 
 
 def cave():
-    pass
+    ex36scenes.cave()
+    while True:
+        global coward
+        choice = input("What do you do? ")
+
+        if choice == "look":
+            ex36scenes.cave()
+        
+        elif choice == "quit":
+            ex36scenes.quit()
+
+        else:
+            print("What was that? Try something else.")
 
 
 # Game Loop

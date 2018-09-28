@@ -76,6 +76,11 @@ A massive troll lies face down in a puddle of its own blood, and the way to the 
 into the mountain overhead is a cave, and the remains of numerous would-be heroes lies at the base of the cliff.
     """)
 
+def cave():
+    print(r"""
+This is a cave on a mountain up high.
+    """)
+
 def quit():
     print(r"""
 You quit the quest. Dundee remains a ruin, the princess Iona McDougall remains frozen, and Zargothrax reigns forever
