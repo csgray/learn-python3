@@ -1,6 +1,6 @@
 # Corey Gray
-# ex36scenes.py
-# The scenes for ex36.py because these multi-line strings are unwieldy in the game engine code.
+# ex36strings.py
+# The strings for ex36.py because these multi-line strings are unwieldy in the game engine code.
 
 from sys import exit
 

@@ -2,7 +2,7 @@
 # ex36.py - Designing and Debugging... An Adventure Game!
 # A really simple text adventure using lists, functions, and modules (No objects!)
 
-import ex36scenes # for scene descriptions
+import ex36strings # for scene descriptions
 
 
 # Game Variables
@@ -14,9 +14,13 @@ on_rocks = False
 
 # Game Engine Functions
 def game(): 
-    ex36scenes.intro()
+    ex36strings.intro()
     input("Press any key to continue...")
     base()
+
+def quit():
+    ex36strings.quit()
+    exit()
 
 
 def die():
@@ -42,12 +46,12 @@ def die():
 
 # Scenes
 def base():
-    ex36scenes.base()
+    ex36strings.base()
     while True:
         choice = input("What do you do? ")
 
         if choice == "look":
-            ex36scenes.base()
+            ex36strings.base()
 
         elif "look" in choice and "trail" in choice:
             print("""
@@ -69,19 +73,19 @@ annoying, but you find it easier to move. Plus, you can actually draw your sword
             trail1()
 
         elif choice == "quit":
-            ex36scenes.quit()
+            quit()
 
         else:
             print("What was that? Try something else.")
 
 
 def trail1():
-    ex36scenes.trail1()
+    ex36strings.trail1()
     while True:
         choice = input("What do you do? ")
 
         if choice == "look":
-            ex36scenes.trail1()
+            ex36strings.trail1()
         
         elif choice in ["run", "flee", "retreat", "withdraw"]:
             print("\nYou turn tail and run back down the trail!")
@@ -109,19 +113,19 @@ The battle ends with the last goblin's head rolling off of its shoulders and fal
                 trail2()
 
         elif choice == "quit":
-            ex36scenes.quit()
+            quit()
 
         else:
             print("What was that? Try something else.")
 
 
 def trail2():
-    ex36scenes.trail2()
+    ex36strings.trail2()
     while True:
         choice = input("What do you do? ")
 
         if choice == "look":
-            ex36scenes.trail2()
+            ex36strings.trail2()
 
         elif ("look" in choice or "search" in choice) and ("goblins" in choice or "corpse" in choice):
             print("""
@@ -144,20 +148,20 @@ with worthless trash, but in one of them you find an adventurer's pack containin
             cliff1()
 
         elif choice == "quit":
-            ex36scenes.quit()
+            quit()
 
         else:
             print("What was that? Try something else.")
 
 
 def cliff1():
-    ex36scenes.cliff1()
+    ex36strings.cliff1()
     while True:
         global on_rocks
         choice = input("What do you do? ")
         
         if choice == "look":
-            ex36scenes.cliff1()
+            ex36strings.cliff1()
         
         elif "look" in choice and "troll" in choice:
             print("""
@@ -216,20 +220,20 @@ position where you can look down on the troll.
             trail2()
 
         elif choice == "quit":
-            ex36scenes.quit()
+           quit()
 
         else:
             print("What was that? Try something else.")
 
 
 def cliff2():
-    ex36scenes.cliff2()
+    ex36strings.cliff2()
     while True:
         global on_rocks
         choice = input("What do you do? ")
         
         if choice == "look":
-            ex36scenes.cliff2()
+            ex36strings.cliff2()
 
         elif "look" in choice and "remains" in choice:
             print("""
@@ -259,20 +263,20 @@ overhead. A few sharp tugs tells you that it is well anchored and you start your
             cave()
 
         elif choice == "quit":
-            ex36scenes.quit()
+            quit()
 
         else:
             print("What was that? Try something else.")
 
 
 def cave():
-    ex36scenes.cave()
+    ex36strings.cave()
     while True:
         global coward
         choice = input("What do you do? ")
 
         if choice == "look":
-            ex36scenes.cave()
+            ex36strings.cave()
         
         elif "look" in choice and ("shrine" in choice or "altar" in choice):
             print("""
@@ -327,10 +331,10 @@ unicorns.
 You raise it up to the heavens above, and you hail the king!
             """)
             input("Press any key to continue...")
-            ex36scenes.victory()
+            ex36strings.victory()
 
         elif choice == "quit":
-            ex36scenes.quit()
+            quit()
 
         else:
             print("What was that? Try something else.")
