@@ -276,6 +276,32 @@ def cave():
         if choice == "look":
             ex36scenes.cave()
         
+        if "look" in choice and ("shrine" in choice or "altar" in choice):
+            print("""
+Carved from the stone of the cave itself and permanently fixed to the floor, this altar sits on a raised dais at the
+back of the cave with curved ramps that hug the walls leading up to it. The sides depict images of epic battles where
+heroes of centuries of old face demonic enemies. The top is bare save for the huge hammer on top of it.
+            """)
+        
+        if "look" in choice and ("warriors" in choice or "statues" in choice):
+            print("""
+Two grim warriors stand eternal guard over the altar. Every detail is reflected in their weapons and armor, and their
+helmeted gaze is fixed on the hammer atop the altar. A dim blue glow is barely perceptible from within the helms.
+            """)
+        
+        if "look" in choice and "hammer" in choice:
+            print("""
+This massive hammer rests atop the altar waiting for a warrior with a heart pure of steel. An ancient weapon, the head
+is a block of carved stone reinforced with metal and bearing runes. The shaft is almost as long as a man is tall. The
+very air surrounding the hammer thrums with a barely contained power from thousands of years ago.        
+            """)
+
+        if "get" in choice and "hammer" in choice and coward:
+            pass
+        
+        if "get" in choice and "hammer" in choice and not coward:
+            pass
+
         elif choice == "quit":
             ex36scenes.quit()
 

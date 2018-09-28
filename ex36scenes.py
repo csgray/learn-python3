@@ -78,7 +78,10 @@ into the mountain overhead is a cave, and the remains of numerous would-be heroe
 
 def cave():
     print(r"""
-This is a cave on a mountain up high.
+This is a cave on a mountain up high. While the entrance is rough and the wind howls near the mouth, the interior of the
+cave gradually transitions to finished stonework. Sconces carved into the walls burn with an undying blue flame that
+banish all shadows from the shrine. For it is a shrine: At the far end of the cave, a large stone altar rises out of the
+ground. Two large stone warriors flank the shrine gazing down at a huge hammer atop the shrine.
     """)
 
 def quit():
