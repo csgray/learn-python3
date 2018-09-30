@@ -10,11 +10,13 @@ As such, there's not much new in here. It's a collection of exercises designed f
 * [ex27.md](https://github.com/csgray/learn-python3/blob/master/ex27.md) is a set of Boolean truth tables. Learn them and love them. 
 * [ex37.md](https://github.com/csgray/learn-python3/blob/master/ex37.md) is a collection of keywords, data types, string escape sequences, old style string formats, and operators.
 
-## Stuff To Make Better:
+## Stuff of Which I Am Kind of Proud
 
 ### Exercise 36: Designing and Debugging
 
-This is supposed to be a little text-based adventure game using lists, functions, and modules. No longer a lame little shell, my game is slowly coming together. It needs more work until is worthy of its title!
+This is the first exercise where you make a text-based adventure game, and as such it is done using lists, functions, and modules. No classes! That comes later. Once a sad little shell of a game, thanks to the power of beer and hours of [Gloryhammer](https://gloryhammer.com/), it is now something that I actually like. I will be developing it further in later exercises. 
+
+## Stuff To Make Better:
 
 ### Exercise 43: Basic Object-Oriented Analysis and Design
 
